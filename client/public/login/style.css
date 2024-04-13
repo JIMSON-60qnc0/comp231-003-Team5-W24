@@ -1,0 +1,51 @@
+/* Overall styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f0f0f0; 
+    background-image: url("./book-with-green-board-background_1150-3836.jpg"); /* Adjust the image name */
+    background-repeat: no-repeat;  /* Prevent the image from repeating */
+    background-size: cover;
+    background-position: center;
+}
+
+/* Style the container */
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Styling form elements */
+.container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.container label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.container input[type="text"], .container input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+.container button[type="submit"] {
+    background-color: #04AA6D;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}

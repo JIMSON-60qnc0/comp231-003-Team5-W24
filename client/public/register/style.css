@@ -1,0 +1,38 @@
+/* Overall Page Styling */
+body {
+    /* Preserving your existing body styles */
+    /* ... your other styles ... */
+
+    /* Enhanced background settings for better UX */
+    background-image: url("./iStock-506432952.jpg");
+    background-repeat: no-repeat; /* Changed to no-repeat for a cleaner look */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Keep the background stationary during scroll */
+}
+
+/* Container and Fieldset Styling */
+.container {
+    display: flex;
+    justify-content: center; /* Center the .container content horizontally */
+    align-items: center; /* Center the .container content vertically */
+    height: 100vh; /* Make .container take full viewport height */
+}
+
+.container fieldset {
+    border: 2px solid #ccc; /* Slightly thicker border for better visibility */
+    padding: 20px; /* Increased padding for better spacing */
+    margin-bottom: 20px; /* Increased margin for better spacing */
+    border-radius: 8px; /* More pronounced rounded corners */
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background for readability */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    max-width: 400px; /* Adjusted width for better form appearance */
+}
+
+/* Legend Styling */
+.container legend {
+    font-weight: 600; /* Slightly bolder font for emphasis */
+    padding: 0 10px; /* Padding to offset the text slightly */
+    background-color: rgba(255, 255, 255, 0.8); /* Matching semi-transparent background */
+    border-radius: 4px; /* Rounded corners for the legend */
+}

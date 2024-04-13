@@ -1,0 +1,56 @@
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Top bar styling */
+.top-bar {
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 10px;
+    text-align: right;
+}
+
+.top-bar input[type="search"] {
+    padding: 5px;
+    margin-right: 10px;
+    width: 200px;
+}
+
+/* Welcome section */
+.welcome-section h1 {
+    text-align: center;
+    padding: 20px;
+    color: #333;
+}
+
+/* Course offering section */
+.course-offering {
+    background-color: #ffffff;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.course h3 {
+    margin: 0;
+    color: #007bff;
+}
+
+.course button {
+    background-color: #28a745;
+    color: #ffffff;
+    border: none;
+    padding: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.course button:hover {
+    background-color: #218838;
+}
