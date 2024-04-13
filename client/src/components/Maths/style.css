@@ -1,0 +1,52 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #007bff;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+h2 {
+    color: #333;
+}
+
+.quizzes, .course-contents {
+    background-color: white;
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.content h3 {
+    color: #007bff;
+}
+
+.content a, .quizzes a {
+    display: inline-block;
+    margin: 10px 0;
+    color: #007bff;
+}
+
+video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-top: 10px;
+}

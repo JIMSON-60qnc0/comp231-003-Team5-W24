@@ -1,14 +1,15 @@
+// Example: server/routes/courses.js
 const express = require('express');
 const router = express.Router();
-const Course = require('../models/course'); // Assuming you have a Course model
+const db = require('../config/database');
 
 router.get('/', async (req, res) => {
     try {
-        const courses = await Course.findAll();
-        res.json(courses);
+        const [rows] = await db.execute('SELECT * FROM courses'); 
+        res.json(rows);
     } catch (err) {
         console.error(err);
-        res.status(500).json({ error: 'Server error' });
+        res.status(500).json({ error: 'Failed to fetch courses' });
     }
 });
 
