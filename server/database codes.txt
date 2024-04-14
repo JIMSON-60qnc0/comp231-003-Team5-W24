@@ -1,0 +1,27 @@
+-- Create the users table
+CREATE TABLE users (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    role ENUM('student', 'instructor') DEFAULT 'student',
+    points INT DEFAULT 0
+);
+
+-- Create the courses table
+CREATE TABLE courses (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    title VARCHAR(255) NOT NULL,
+    description TEXT,
+    subject VARCHAR(255)
+);
+
+-- Create the enrollments table
+CREATE TABLE enrollments (
+    user_id INT,
+    course_id INT,
+    PRIMARY KEY (user_id, course_id),
+    FOREIGN KEY (user_id) REFERENCES users(id),
+    FOREIGN KEY (course_id) REFERENCES courses(id)
+);
+

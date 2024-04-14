@@ -1,30 +1,33 @@
 // server/models/user.js
-const Sequelize = require('sequelize');
-const db = require('../config/database'); // Assuming you have database config set up
+const { Sequelize, DataTypes } = require('sequelize');
+const db = require('../config/database');
 
-const User = db.define('user', {
-    id: {
-        type: Sequelize.INTEGER,
-        autoIncrement: true,
-        primaryKey: true
-    },
+const User = db.define('User', {
+    // Define attributes
     name: {
-        type: Sequelize.STRING,
+        type: DataTypes.STRING,
         allowNull: false
     },
     email: {
-        type: Sequelize.STRING,
+        type: DataTypes.STRING,
         allowNull: false,
         unique: true
     },
     password: {
-        type: Sequelize.STRING,
+        type: DataTypes.STRING,
         allowNull: false
     },
     role: {
-        type: Sequelize.STRING,
-        defaultValue: 'student' 
+        type: DataTypes.ENUM('student', 'instructor'),
+        defaultValue: 'student'
+    },
+    points: {
+        type: DataTypes.INTEGER,
+        defaultValue: 0
     }
+}, {
+    // Model options
 });
 
 module.exports = User;
+

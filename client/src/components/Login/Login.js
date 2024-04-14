@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
 import './style.css'; 
 
 function Login() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const navigate = useNavigate();
 
     const handleSubmit = async (event) => {
-        event.preventDefault(); // Prevent default form submission
+        event.preventDefault();
 
         try {
             const response = await fetch('/api/login', {
@@ -21,9 +23,9 @@ function Login() {
             if (data.token) {
                 localStorage.setItem('authToken', data.token);
                 console.log('Login successful!'); 
-                // Optionally redirect to a logged-in area of your app
+                navigate('/home'); // Redirect to the homepage or dashboard after login
             } else {
-                console.error('Login failed:', data.error); // Assuming your backend sends an 'error' property on failure
+                console.error('Login failed:', data.error);
             }
         } catch (error) {
             console.error('Error during login:', error);
@@ -32,8 +34,9 @@ function Login() {
 
     return (
         <div className="container">
+           
+            <form onSubmit={handleSubmit}>
             <h1>Login</h1>
-            <form onSubmit={handleSubmit}>   // Call handleSubmit on form submit
                 <label htmlFor="username">Username:</label>
                 <input 
                     type="text" 
@@ -55,7 +58,12 @@ function Login() {
                 />
 
                 <button type="submit">Login</button>
+
+                <p>
+                Don't have an account? <Link to="/registration">Sign up</Link>
+            </p>
             </form>
+           
         </div>
     );
 }

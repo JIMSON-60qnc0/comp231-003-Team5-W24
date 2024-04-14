@@ -1,11 +1,9 @@
-// server/config/database.js
-const mysql = require('mysql2/promise'); // Using mysql2/promise for easier async/await
+// Only export Sequelize
+const { Sequelize } = require('sequelize');
 
-const pool = mysql.createPool({
-    host: 'localhost',    // Usually 'localhost'
-    user: 'root',         // Your MySQL username
-    password: '12345',    // Your MySQL password
-    database: 'project'   // Name of your database
+const sequelize = new Sequelize('project', 'root', '12345', {
+    host: 'localhost',
+    dialect: 'mysql'
 });
 
-module.exports = pool;
+module.exports = sequelize;

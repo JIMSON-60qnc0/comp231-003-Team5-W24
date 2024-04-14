@@ -1,5 +1,10 @@
 import React, { useState } from 'react';
 import './style.css';
+import EnrollButton from '../enroll';
+import { jwtDecode } from 'jwt-decode';
+
+
+// Home page component
 
 function HomePage() {
     const [searchQuery, setSearchQuery] = useState('');
@@ -15,7 +20,20 @@ function HomePage() {
 
     const handleEnroll = async () => {
         try {
-            const userId = // Get logged-in user ID (you'll need to implement this)
+            // Retrieve the JWT token from localStorage
+            const token = localStorage.getItem('authToken');
+            
+            // Check if the token exists
+            if (!token) {
+                console.error('User is not logged in.');
+                return;
+            }
+    
+            // Decode the JWT token to get the user ID
+            const decoded = jwtDecode(token);
+            const userId = decoded.id;
+    
+            // Make a POST request to enroll the user
             const response = await fetch('/api/maths/enroll', {
                 method: 'POST',
                 headers: {
@@ -23,7 +41,8 @@ function HomePage() {
                 },
                 body: JSON.stringify({ userId })
             });
- 
+    
+            // Check the response from the server
             if (response.ok) {
                 console.log('Enrollment successful!');
             } else {
